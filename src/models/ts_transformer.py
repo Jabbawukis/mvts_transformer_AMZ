@@ -167,7 +167,7 @@ class TransformerBatchNormEncoderLayer(nn.modules.Module):
             state['activation'] = F.relu
         super(TransformerBatchNormEncoderLayer, self).__setstate__(state)
 
-    def forward(self, src: Tensor, src_mask: Optional[Tensor] = None,
+    def forward(self, src: Tensor, is_causal: bool, src_mask: Optional[Tensor] = None,
                 src_key_padding_mask: Optional[Tensor] = None) -> Tensor:
         r"""Pass the input through the encoder layer.
 
@@ -311,4 +311,3 @@ class TSTransformerEncoderClassiregressor(nn.Module):
         output = self.output_layer(output)  # (batch_size, num_classes)
 
         return output
-
