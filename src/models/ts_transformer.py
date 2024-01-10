@@ -169,6 +169,7 @@ class TransformerBatchNormEncoderLayer(nn.modules.Module):
 
     def forward(self, src: Tensor, is_causal: bool, src_mask: Optional[Tensor] = None,
                 src_key_padding_mask: Optional[Tensor] = None) -> Tensor:
+        # https://github.com/gzerveas/mvts_transformer/issues/48
         r"""Pass the input through the encoder layer.
 
         Args:
