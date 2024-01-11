@@ -42,6 +42,7 @@ def model_factory(config, data):
                                                             activation=config['activation'],
                                                             norm=config['normalization_layer'], freeze=config['freeze'])
         elif config['model'] == 'transformer':
+            # here, the transformer encoder gets initialized with the predefined values
             return TSTransformerEncoderClassiregressor(feat_dim, max_seq_len, config['d_model'],
                                                         config['num_heads'],
                                                         config['num_layers'], config['dim_feedforward'],
