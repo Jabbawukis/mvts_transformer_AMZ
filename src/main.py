@@ -86,6 +86,7 @@ def main(config):
     if config['val_pattern']:  # used if val data come from different files / file patterns
         val_data = data_class(config['data_dir'], pattern=config['val_pattern'], n_proc=-1, config=config)
         val_indices = val_data.all_IDs
+        # if --val_pattern TEST -> define the test set as a validation set https://github.com/gzerveas/mvts_transformer/issues/11
 
     # Note: currently a validation set must exist, either with `val_pattern` or `val_ratio`
     # Using a `val_pattern` means that `val_ratio` == 0 and `test_ratio` == 0
